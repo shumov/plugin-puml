@@ -1769,7 +1769,8 @@ var plantumlEncode = (function() {
     return function plantumlEncode(s) {
         s = unescape(encodeURIComponent(s));
         // var data = utf8bytes(text);
-        var deflated = encode64(deflate(s, 9));
+        return encode64(deflate(s, 9));
+
     };
 
 })();
