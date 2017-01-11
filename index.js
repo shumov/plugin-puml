@@ -1786,7 +1786,14 @@ module.exports = {
 
                 // var text = iconv.convert(block.body).toString('utf8');
 
+                console.log('\n\n\n------BEFORE');
+                console.log(block.body);
+
                 var encoded = plantumlEncode(block.body);
+
+                console.log('\n------ENCODED');
+                console.log(encoded);
+
 
                 var href = 'http://www.plantuml.com/plantuml/' + format + '/' + encoded;
 
