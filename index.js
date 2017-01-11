@@ -11,7 +11,13 @@ module.exports = {
 
                 // Generate url
 
+                console.log('-----BEFORE');
+                console.log(block.body);
+
                 var text = iconv.convert(block.body);
+
+                console.log('-----AFTER');
+                console.log(text);
 
                 var encoded = plantumlEncoder.encode(text);
                 var href = 'http://www.plantuml.com/plantuml/' + format + '/' + encoded;
