@@ -1,4 +1,5 @@
 var plantumlEncoder = require('plantuml-encoder');
+var iconv = new Iconv('ISO-8859-1', 'UTF-8');
 
 module.exports = {
     blocks: {
@@ -8,7 +9,10 @@ module.exports = {
                 var format = block.kwargs.format || defaultFormat;
 
                 // Generate url
-                var encoded = plantumlEncoder.encode(block.body);
+
+                var text = iconv.convert(block.body);
+
+                var encoded = plantumlEncoder.encode(text);
                 var href = 'http://www.plantuml.com/plantuml/' + format + '/' + encoded;
 
                 return '<img src="' + href + '" />';
