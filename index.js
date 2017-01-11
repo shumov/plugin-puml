@@ -1,4 +1,5 @@
 var plantumlEncoder = require('plantuml-encoder');
+var Iconv  = require('iconv').Iconv;
 var iconv = new Iconv('ISO-8859-1', 'UTF-8');
 
 module.exports = {
