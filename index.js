@@ -11,7 +11,7 @@ module.exports = {
 
                 // Generate url
 
-                var text = iconv.convert(block.body);
+                var text = iconv.convert(block.body).toString('utf8');
 
                 var encoded = plantumlEncoder.encode(text);
                 var href = 'http://www.plantuml.com/plantuml/' + format + '/' + encoded;
